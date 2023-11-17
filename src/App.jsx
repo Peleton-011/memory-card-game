@@ -48,6 +48,7 @@ function App() {
 	};
 	const win = () => {
 		alert("You win");
+		setCount(0)
 		setBoolian(!boolian);
 	};
 
