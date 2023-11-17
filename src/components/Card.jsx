@@ -1,7 +1,6 @@
 import React from "react";
 
 const Card = ({ cardData: { name, images, onClick } }) => {
-    console.log(name)
 	return (
 		<div>
 			<h2>Card</h2>{" "}
