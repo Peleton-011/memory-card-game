@@ -1,8 +1,10 @@
 import React from "react";
 
-const Card = ({ cardData: { name, images }, firstClick, secondClick }) => {
-	let isFirstClick = true;
-
+const Card = ({
+	cardData: { name, images, isFirstClick },
+	firstClick,
+	secondClick,
+}) => {
 	return (
 		<div
 			style={{ cursor: "pointer", width: "15rem", height: "25rem" }}

@@ -35,12 +35,17 @@ function App() {
 		fetchData();
 	}, [boolian]);
 
+    const lose = () => {
+        alert("You lose")
+        setBoolian(!boolian)
+    }
+
 	return (
-		<main style={{maxWidth: "100vw"}}>
-			<button onClick={() => window.location.reload(true)}>Regen</button>
+		<main style={{ maxWidth: "100vw" }}>
+			{/* <button onClick={() => window.location.reload(true)}>Regen</button> */}
 			<button onClick={() => setBoolian(!boolian)}>Soft Regen</button>
 
-			<CardList cardList={cardList} />
+			<CardList cardList={cardList} lose={lose} />
 		</main>
 	);
 }
