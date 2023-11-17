@@ -3,10 +3,10 @@ import Card from "./Card";
 
 const CardList = ({ cardList }) => {
 	return (
-		<div>
+		<div style={{ display: "flex", flexFlow: "row wrap", gap: "1rem" }}>
 			{cardList.map((card) => {
-				return <Card key={card.id} cardData={card} />
-            })}
+				return <Card key={card.id} cardData={card} />;
+			})}
 		</div>
 	);
 };
