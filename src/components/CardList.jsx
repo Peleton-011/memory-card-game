@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { useState, useEffect } from "react";
 
-const CardList = ({ cardList, lose }) => {
+const CardList = ({ cardList, lose, setCount, count }) => {
 	const [newCardList, setNewCardList] = useState(
 		cardList.map((card) => {
 			return {
@@ -52,6 +52,7 @@ const CardList = ({ cardList, lose }) => {
 
 	const getFirstClick = (id) => {
 		return () => {
+            setCount(count + 1)
 			const newnew = shuffle(newCardList).map((card) => {
 				if (card.id === id) {
 					return {
@@ -66,7 +67,7 @@ const CardList = ({ cardList, lose }) => {
 	};
 
 	const secondClick = () => {
-		console.log("second click");
+		setCount(0)
 		lose();
 	};
 

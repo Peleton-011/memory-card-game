@@ -7,6 +7,7 @@ import { v4 as uuid } from "uuid";
 function App() {
 	const [cardList, setCardList] = useState([]);
 	const [boolian, setBoolian] = useState(false);
+	const [count, setCount] = useState(0);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -35,17 +36,32 @@ function App() {
 		fetchData();
 	}, [boolian]);
 
-    const lose = () => {
-        alert("You lose")
-        setBoolian(!boolian)
-    }
+	useEffect(() => {
+		if (count >= 10) {
+			win();
+		}
+	}, [count]);
+
+	const lose = () => {
+		alert("You lose");
+		setBoolian(!boolian);
+	};
+	const win = () => {
+		alert("You win");
+		setBoolian(!boolian);
+	};
 
 	return (
 		<main style={{ maxWidth: "100vw" }}>
 			{/* <button onClick={() => window.location.reload(true)}>Regen</button> */}
-			<button onClick={() => setBoolian(!boolian)}>Soft Regen</button>
-
-			<CardList cardList={cardList} lose={lose} />
+			<button onClick={() => setBoolian(!boolian)}>Soft Regen</button>{" "}
+			<span>{count}</span>
+			<CardList
+				cardList={cardList}
+				lose={lose}
+				setCount={setCount}
+				count={count}
+			/>
 		</main>
 	);
 }
