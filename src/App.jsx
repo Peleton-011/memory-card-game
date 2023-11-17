@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import DAPI from "./APIs/DAPI";
+import Card from "./components/Card";
 
 function App() {
 
@@ -27,8 +28,7 @@ function App() {
 		fetchData();
 	}, []);
 	return <>
-    <img src={data.images && data.images[0].href} alt="digimon image" />
-    <h3>{data.name}</h3>
+        <Card cardData={data} />
     </>;
 }
 
