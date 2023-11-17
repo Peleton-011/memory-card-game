@@ -14,7 +14,6 @@ const CardList = ({ cardList, lose, setCount, count }) => {
 
 	useEffect(() => {
 		(async () => {
-			console.log("aaaaaa");
 			await new Promise((res) => setTimeout(res, 1000));
 			setNewCardList(
 				cardList.map((card) => {
@@ -24,7 +23,6 @@ const CardList = ({ cardList, lose, setCount, count }) => {
 					};
 				})
 			);
-			console.log("ahadsgd");
 		})();
 	}, [cardList]);
 
@@ -45,7 +43,6 @@ const CardList = ({ cardList, lose, setCount, count }) => {
 				array[currentIndex],
 			];
 		}
-		console.log(array);
 
 		return array;
 	};
